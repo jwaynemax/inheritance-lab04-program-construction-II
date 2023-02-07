@@ -70,5 +70,27 @@ public class OrientedStrandBoard extends Wood {
 		
 		return Math.round(avgPrice * 100.0) / 100.0;
 	}
+	
+	/**
+	 * Check if the Wood passed in could be a substitute for this current Wood
+	 * @param woodToCompare Wood to compare
+	 * @return true if it is a valid substitute
+	 */
+	@Override
+	public boolean isWoodInterchangeable(Wood woodToCompare) {
+		if (woodToCompare == null) {
+			throw new IllegalArgumentException("woodToCompare cannot be null");
+		}
+		
+		boolean output = false;
+		
+		if (woodToCompare.pricePerFoot <= this.pricePerFoot + 5.0 
+				&& woodToCompare.pricePerFoot >= this.pricePerFoot - 5.0 
+				&& woodToCompare.getJankaHardness() >= this.getJankaHardness()) {
+			output = true;
+		} 
+		
+		return output;
+	}
 
 }
