@@ -1,8 +1,13 @@
 package edu.westga.cs6312.main;
 
+import java.util.ArrayList;
+
+import edu.westga.cs6312.controller.GoWestLumber;
 import edu.westga.cs6312.model.Abura;
 import edu.westga.cs6312.model.OrientedStrandBoard;
+import edu.westga.cs6312.model.Tamarind;
 import edu.westga.cs6312.model.Wood;
+import edu.westga.cs6312.model.YellowBirch;
 
 /**
  * define objects
@@ -17,12 +22,27 @@ public class Main {
 	 * @param args not used
 	 */
 	public static void main(String[] args) {
-		OrientedStrandBoard myWood = new OrientedStrandBoard();
-		Wood myWood2 = new Wood();
-		myWood2.setPricePerFoot(30);
-		myWood2.setJankaHardness(830);
+		Abura myWood1 = new Abura();
+		Tamarind myWood2 = new Tamarind();
+		YellowBirch myWood3 = new YellowBirch();
+		
+		ArrayList<String> names = new ArrayList<String>();
+		names.add(myWood1.getScientificName());
+		names.add("Sample");
+		names.add(myWood3.getScientificName());
+		
+		ArrayList<Wood> lumberInventory = new ArrayList<Wood>();
+		lumberInventory.add(myWood1);
+		lumberInventory.add(myWood2);
+		lumberInventory.add(myWood3);
+		
+		GoWestLumber myStore = new GoWestLumber();
+		
+		myStore.setLumberInventory(lumberInventory);
 				
-		System.out.println(myWood.totalAveragePricePerTree(4));
+		System.out.println(myStore.getWoodByNames(names));
+
+				
 	}
 
 }

@@ -44,7 +44,18 @@ public class GoWestLumber {
 	 * @return the most expensive Wood or null if no Wood
 	 */
 	public Wood getMostExpensiveWood() {
-		return null;
+		
+		double max = 0;
+		Wood mostExpensive = this.lumberInventory.get(0);
+		
+		for (Wood lumberInventory: this.getLumberInventory()) {
+			if (lumberInventory.getPricePerFoot() > max) {
+				max = lumberInventory.getPricePerFoot();
+				mostExpensive = lumberInventory;
+			}
+		}
+		
+		return mostExpensive;
 	}
 	
 	/**
@@ -52,7 +63,17 @@ public class GoWestLumber {
 	 * @return the highest Janka rated wood or null if no wood
 	 */
 	public Wood getHighestJankaWood() {
-		return null;
+		double max = 0;
+		Wood highest = this.lumberInventory.get(0);
+		
+		for (Wood lumberInventory: this.getLumberInventory()) {
+			if (lumberInventory.getJankaHardness() > max) {
+				max = lumberInventory.getJankaHardness();
+				highest = lumberInventory;
+			}
+		}
+		
+		return highest;
 	}
 	
 	/**
@@ -61,7 +82,18 @@ public class GoWestLumber {
 	 * @return a list of Wood(s) -case agnostic - or empty list if none match
 	 */
 	public ArrayList<Wood> getWoodByNames(ArrayList<String> woodNames) {
-		return null;
+		
+		ArrayList<Wood> matchingName = new ArrayList<Wood>();
+		
+		for (Wood lumberInventory: this.getLumberInventory()) {
+			for (String name: woodNames) {
+				if (lumberInventory.getScientificName() == name) {
+					matchingName.add(lumberInventory);
+				}
+			}
+		}
+		
+		return matchingName;
 	}
 	
 }
