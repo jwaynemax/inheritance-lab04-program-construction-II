@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author justinmaxwell
  * @version 2/6/23
  */
-public class YellowBirch extends Wood{
+public class YellowBirch extends Wood {
 
 	/**
 	 * YellowBirch constructor

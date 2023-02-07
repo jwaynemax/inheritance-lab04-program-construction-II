@@ -1,8 +1,5 @@
 package edu.westga.cs6312.main;
 
-import edu.westga.cs6312.model.Abura;
-import edu.westga.cs6312.model.Tamarind;
-import edu.westga.cs6312.model.YellowBirch;
 
 /**
  * define objects
@@ -18,9 +15,6 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
-		Tamarind myWood = new Tamarind();
-		
-		System.out.println(myWood.getCommonUses());
 	}
 
 }
