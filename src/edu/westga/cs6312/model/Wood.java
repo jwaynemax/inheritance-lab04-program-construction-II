@@ -2,11 +2,17 @@ package edu.westga.cs6312.model;
 
 import java.util.ArrayList;
 
+/**
+ * Define wood object
+ * @author justinmaxwell
+ * @version 2/6/23
+ *
+ */
 public class Wood {
 	protected String scientificName;
 	protected ArrayList<String> commonNames; 
-	protected double treeHeight; // meters
-	protected double treeDiameter; // meters 
+	protected double treeHeight;
+	protected double treeDiameter; 
 	protected int jankaHardness;
 	protected ArrayList<String> commonUses;
 	protected double pricePerFoot;
@@ -78,7 +84,7 @@ public class Wood {
 	 * @param scientificName the scientificName to set
 	 */
 	public void setScientificName(String scientificName) {
-		if(scientificName == null) {
+		if (scientificName == null) {
 			throw new IllegalArgumentException("scientificName cannot be null");
 		}
 		this.scientificName = scientificName;
@@ -97,7 +103,7 @@ public class Wood {
 	 * @param commonNames the commonNames to set
 	 */
 	public void setCommonNames(ArrayList<String> commonNames) {
-		if(commonNames == null) {
+		if (commonNames == null) {
 			throw new IllegalArgumentException("commonNames cannot be null");
 		}
 		this.commonNames = commonNames;
@@ -116,7 +122,7 @@ public class Wood {
 	 * @param treeHeight the treeHeight to set
 	 */
 	public void setTreeHeight(double treeHeight) {
-		if(Double.compare(treeHeight, 0.0) < 0) {
+		if (Double.compare(treeHeight, 0.0) < 0) {
 			throw new IllegalArgumentException("treeHeight cannot be less than 0");
 		}
 		this.treeHeight = treeHeight;
@@ -135,7 +141,7 @@ public class Wood {
 	 * @param treeDiameter the treeDiameter to set
 	 */
 	public void setTreeDiameter(double treeDiameter) {
-		if(Double.compare(treeDiameter, 0.0) < 0) {
+		if (Double.compare(treeDiameter, 0.0) < 0) {
 			throw new IllegalArgumentException("treeDiameter cannot be less than 0");
 		}
 		this.treeDiameter = treeDiameter;
@@ -154,7 +160,7 @@ public class Wood {
 	 * @param jankaHardness the jankaHardness to set
 	 */
 	public void setJankaHardness(int jankaHardness) {
-		if(jankaHardness < 0) {
+		if (jankaHardness < 0) {
 			throw new IllegalArgumentException("jankaHardness cannot be less than 0");
 		}
 		this.jankaHardness = jankaHardness;
