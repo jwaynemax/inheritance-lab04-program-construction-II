@@ -16,7 +16,7 @@ public class OrientedStrandBoard extends Wood {
 		super.setScientificName("");
 		this.setCommonNames();
 		super.setTreeHeight(8.0);
-		super.setTreeDiameter(4.0);
+		super.setTreeDiameter(4.1);
 		super.setJankaHardness(0);
 		this.setCommonUses();
 		super.setPricePerFoot(9.90);
