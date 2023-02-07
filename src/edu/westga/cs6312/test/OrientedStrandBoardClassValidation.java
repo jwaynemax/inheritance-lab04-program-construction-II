@@ -84,10 +84,11 @@ class OrientedStrandBoardClassValidation {
 	
 	@Test
 	void testIsWoodInterchangeableTrueValue() {
-		Wood woodToCompare = new Wood();
-		woodToCompare.setScientificName("");
+		Wood interchangeableWood = new Wood();
+		interchangeableWood.setPricePerFoot(12.0);
+		interchangeableWood.setJankaHardness(3);
 		
-		assertEquals(true, this.woodTestObject.isWoodInterchangeable(woodToCompare), "Testing isWoodInterchangeable");
+		assertEquals(true, this.woodTestObject.isWoodInterchangeable(interchangeableWood), "Testing isWoodInterchangeable");
 	}
 	
 	@Test

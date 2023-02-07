@@ -86,10 +86,11 @@ class AburaClassValidation {
 	
 	@Test
 	void testIsWoodInterchangeableTrueValue() {
-		Wood woodToCompare = new Wood();
-		woodToCompare.setScientificName("Mitragyna ledermannii");
+		Wood interchangeableWood = new Wood();
+		interchangeableWood.setPricePerFoot(17.0);
+		interchangeableWood.setJankaHardness(830);
 		
-		assertEquals(true, this.woodTestObject.isWoodInterchangeable(woodToCompare), "Testing isWoodInterchangeable");
+		assertEquals(true, this.woodTestObject.isWoodInterchangeable(interchangeableWood), "Testing isWoodInterchangeable");
 	}
 	
 	@Test
