@@ -1,6 +1,7 @@
 package edu.westga.cs6312.main;
 
 import edu.westga.cs6312.model.Abura;
+import edu.westga.cs6312.model.Tamarind;
 import edu.westga.cs6312.model.YellowBirch;
 
 /**
@@ -17,7 +18,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
-		YellowBirch myWood = new YellowBirch();
+		Tamarind myWood = new Tamarind();
 		
 		System.out.println(myWood.getCommonUses());
 	}
