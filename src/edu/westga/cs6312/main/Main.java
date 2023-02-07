@@ -1,6 +1,7 @@
 package edu.westga.cs6312.main;
 
 import edu.westga.cs6312.model.Abura;
+import edu.westga.cs6312.model.YellowBirch;
 
 /**
  * define objects
@@ -16,7 +17,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
-		Abura myWood = new Abura();
+		YellowBirch myWood = new YellowBirch();
 		
 		System.out.println(myWood.getCommonUses());
 	}
