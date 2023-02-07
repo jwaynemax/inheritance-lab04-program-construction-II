@@ -93,7 +93,15 @@ class OrientedStrandBoardClassValidation {
 	
 	@Test
 	void testTotalAveragePricePerTreeValue() {
-
-		assertEquals(0.05, this.woodTestObject.totalAveragePricePerTree(), "Testing totalAveragePricePerTree");
+		
+		assertEquals(81.18, this.woodTestObject.totalAveragePricePerTree(4), "Testing totalAveragePricePerTree");
+	}
+	
+	@Test
+	void testTotalAveragePricePerTreeZero() {
+		
+		assertThrows(IllegalArgumentException.class, () -> {
+			this.woodTestObject.totalAveragePricePerTree(0);
+		});
 	}
 }

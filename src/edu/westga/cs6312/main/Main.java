@@ -22,7 +22,7 @@ public class Main {
 		myWood2.setPricePerFoot(30);
 		myWood2.setJankaHardness(830);
 				
-		System.out.println(myWood.isWoodInterchangeable(myWood2));
+		System.out.println(myWood.totalAveragePricePerTree(4));
 	}
 
 }

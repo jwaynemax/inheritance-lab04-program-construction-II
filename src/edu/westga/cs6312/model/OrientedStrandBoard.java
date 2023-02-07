@@ -55,6 +55,7 @@ public class OrientedStrandBoard extends Wood {
 		this.jankaHardness = jankaHardness;
 	}
 	
+	
 	/**
 	 * Override totalAveragePricePerTree from Wood
 	 * Get the total price to purchase the whole tree
@@ -63,12 +64,26 @@ public class OrientedStrandBoard extends Wood {
 	 */
 	@Override
 	public double totalAveragePricePerTree() {
+		return 0;
+	}
+	
+	/**
+	 * Overload totalAveragePricePerTree from Wood
+	 * Get the total price to purchase the whole tree
+	 * @param pieces for number of pieces
+	 * @return price for whole tree (estimated)
+	 */
+	public double totalAveragePricePerTree(int pieces) {
 		
-		double boardFeet = Math.pow((this.treeDiameter - 4), 2) * (this.treeHeight / 16);
+		if (pieces <= 0) {
+			throw new IllegalArgumentException("pieces cannot be less than 1");
+		}
+		
+		double sqFt = this.treeDiameter * this.treeHeight;
 
-		double avgPrice = this.pricePerFoot * boardFeet;
+		double pricePerPiece = (sqFt / pieces) * this.pricePerFoot;
 		
-		return Math.round(avgPrice * 100.0) / 100.0;
+		return Math.round(pricePerPiece * 100.0) / 100.0;
 	}
 	
 	/**
