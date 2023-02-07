@@ -1,6 +1,5 @@
 package edu.westga.cs6312.main;
 
-
 /**
  * define objects
  * @author justinmaxwell
