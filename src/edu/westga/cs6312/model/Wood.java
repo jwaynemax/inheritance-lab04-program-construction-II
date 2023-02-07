@@ -31,8 +31,18 @@ public class Wood {
 	 * @return true if it is a valid substitute
 	 */
 	public boolean isWoodInterchangeable(Wood woodToCompare) {
-		return false;
-	};
+		if (woodToCompare == null) {
+			throw new IllegalArgumentException("woodToCompare cannot be null");
+		}
+		
+		boolean output = false;
+		
+		if (woodToCompare.getScientificName().equals(this.scientificName)) {
+			output = true;
+		} 
+		
+		return output;
+	}
 	
 	/**
 	 * Get the total price to purchase the whole tree
@@ -40,8 +50,21 @@ public class Wood {
 	 * @return price for whole tree (estimated)
 	 */
 	public double totalAveragePricePerTree() {
-		return 0;
-	};
+		
+		double diameterToFeet = this.treeDiameter * 3.28084;
+		double heightToFeet = this.treeHeight * 3.28084;
+		
+		if (diameterToFeet == 0 || heightToFeet == 0) {
+			throw new IllegalArgumentException("treeDiameter & treeHeight cannot be 0");
+		}
+		
+		double boardFeet = Math.pow((diameterToFeet - 4), 2) * (heightToFeet / 16);
+
+		double avgPrice = this.pricePerFoot * boardFeet;
+		
+		return Math.round(avgPrice * 100.0) / 100.0;
+	}
+	
 	/**
 	 * Getter
 	 * @return the scientificName
@@ -131,7 +154,7 @@ public class Wood {
 	 * @param jankaHardness the jankaHardness to set
 	 */
 	public void setJankaHardness(int jankaHardness) {
-		if(jankaHardness > 0) {
+		if(jankaHardness < 0) {
 			throw new IllegalArgumentException("jankaHardness cannot be less than 0");
 		}
 		this.jankaHardness = jankaHardness;
@@ -150,7 +173,7 @@ public class Wood {
 	 * @param commonUses the commonUses to set
 	 */
 	public void setCommonUses(ArrayList<String> commonUses) {
-		if(commonUses == null) {
+		if (commonUses == null) {
 			throw new IllegalArgumentException("commonUses cannot be null");
 		}
 		this.commonUses = commonUses;
@@ -169,18 +192,10 @@ public class Wood {
 	 * @param pricePerFoot the pricePerFoot to set
 	 */
 	public void setPricePerFoot(double pricePerFoot) {
-		if(Double.compare(pricePerFoot, 0.0) < 0) {
+		if (Double.compare(pricePerFoot, 0.0) < 0) {
 			throw new IllegalArgumentException("pricePerFoot cannot be less than 0");
 		}
 		
 		this.pricePerFoot = pricePerFoot;
 	}
-	
-	
-	
-	
-	
-	
-	
-
 }
